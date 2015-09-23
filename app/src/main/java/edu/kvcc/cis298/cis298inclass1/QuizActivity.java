@@ -64,6 +64,8 @@ public class QuizActivity extends AppCompatActivity {
         //End code I write*******************************
     }
 
+
+
     //These are methods that we did not write, but Google provided.
     //If we get to using menus, we will need them. They can be ignored for now.
 
