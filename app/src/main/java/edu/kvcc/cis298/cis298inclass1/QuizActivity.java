@@ -10,24 +10,47 @@ import android.widget.Toast;
 
 public class QuizActivity extends AppCompatActivity {
 
+    //Create a class level Widget variables so that we will
+    //have access to stuff from the view.
+    //No value yet. Just declared the variable
     private Button mTrueButton;
     private Button mFalseButton;
 
+    //I didn't write this method. It was given to me by google.
+    //It is the 'setup' method for the app.
+    //It will be called when the app launches.
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_quiz);
 
+        //Begin code I write*******************************
+
+        //Fetch the widget control from the view, and then
+        //cast and assign it to the class variable we setup
         mTrueButton = (Button) findViewById(R.id.true_button);
+
+        //Now that I have a 'handle' to the view widget, I can
+        //Setup an OnClickListener for the widget
+        //This OnClickListner uses an anonymous inner class.
+        //We are passsing what we want to have happen onClick.
         mTrueButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                //Use the Toast class to print a message to the
+                //screen that will fade out after the duration
+                //listed as LENGTH_SHORT
+                //This method requires 3 parameters.
+                //The Context, which will usually be Activity.this,
+                //The Message, which will usually be a string from strings.xml
+                //The Length, which will be one of the predefined constants.
                 Toast.makeText(QuizActivity.this,
                                 R.string.correct_toast,
                                 Toast.LENGTH_SHORT).show();
             }
         });
 
+        //See the notes from TrueButton. It is the same
         mFalseButton = (Button) findViewById(R.id.false_button);
         mFalseButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -37,8 +60,14 @@ public class QuizActivity extends AppCompatActivity {
                         Toast.LENGTH_SHORT).show();
             }
         });
+
+        //End code I write*******************************
     }
 
+    //These are methods that we did not write, but Google provided.
+    //If we get to using menus, we will need them. They can be ignored for now.
+
+    //Begin unneeded google methods*********************************************
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
@@ -60,4 +89,6 @@ public class QuizActivity extends AppCompatActivity {
 
         return super.onOptionsItemSelected(item);
     }
+
+    //End unneeded google methods********************************************
 }
