@@ -33,6 +33,29 @@ public class QuizActivity extends AppCompatActivity {
             new Question(R.string.question_asia, true)
     };
 
+    //****************************************************************
+    //This is a commented out version of the above code that shows how to
+    //do things in multiple steps. If you are a little unsure of what is
+    //happening above, look at this.
+    //****************************************************************
+    /*
+    private Question[] mQuestionBank = new Question[5];
+
+    private Question1 = new Question(R.string.question_oceans, true);
+    private Question2 = new Question(R.string.question_mideast, false);
+    private Question3 = new Question(R.string.question_africa, false);
+    private Question4 = new Question(R.string.question_america, true);
+    private Question5 = new Question(R.string.question_asia, true);
+
+    mQuestionBank[0] = Question1;
+    mQuestionBank[1] = Question2;
+    mQuestionBank[2] = Question3;
+    mQuestionBank[3] = Question4;
+    mQuestionBank[4] = Question5;
+
+    */
+    //****************************************************************
+
     private int mCurrentIndex = 0;
 
     //Private methods that will be used inside the OnCreate
